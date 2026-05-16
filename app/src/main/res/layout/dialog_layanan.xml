@@ -9,26 +9,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Pilihan jenis layanan -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jenis Layanan"
-            android:textSize="12sp"
-            android:textColor="#888888"/>
-
-        <Spinner
-            android:id="@+id/spinnerJenisLayanan"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="8dp"/>
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Pemilik">
+            android:hint="Nama Layanan">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNamaPemilik"
+                android:id="@+id/etNamaLayanan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -36,57 +22,35 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Hewan"
+            android:hint="Deskripsi"
             android:layout_marginTop="8dp">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNamaHewan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Jenis Hewan"
-            android:layout_marginTop="8dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etJenisHewan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tanggal (contoh: 1 Juni 2026)"
-            android:layout_marginTop="8dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etTanggal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Jam (contoh: 09:00)"
-            android:layout_marginTop="8dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etJam"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Catatan (opsional)"
-            android:layout_marginTop="8dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCatatan"
+                android:id="@+id/etDeskripsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minLines="2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Harga (contoh: Rp 100.000/sesi)"
+            android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHarga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Icon Emoji (contoh: 🛁)"
+            android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etIcon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>

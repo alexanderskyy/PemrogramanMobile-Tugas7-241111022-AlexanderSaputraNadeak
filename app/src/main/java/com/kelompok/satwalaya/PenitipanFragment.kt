@@ -22,6 +22,7 @@ class PenitipanFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         repo = SatwalayaRepository(requireContext())
+        
         adapter = LayananAdapter(
             items = repo.getAllPenitipan(),
             binder = { v, item ->
@@ -42,10 +43,12 @@ class PenitipanFragment : Fragment() {
                     .setNegativeButton("Batal", null).show()
             }
         )
+        
         view.findViewById<RecyclerView>(R.id.rvPenitipan).apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = this@PenitipanFragment.adapter
         }
+        
         view.findViewById<FloatingActionButton>(R.id.fabTambahPenitipan).setOnClickListener {
             showTambahDialog()
         }
@@ -63,11 +66,20 @@ class PenitipanFragment : Fragment() {
                 val tanggal = dv.findViewById<TextInputEditText>(R.id.etTanggal).text.toString()
                 val jam = dv.findViewById<TextInputEditText>(R.id.etJam).text.toString()
                 val catatan = dv.findViewById<TextInputEditText>(R.id.etCatatan).text.toString()
+                
                 if (nama.isBlank() || hewan.isBlank()) {
                     Toast.makeText(requireContext(), "Nama pemilik & hewan wajib diisi!", Toast.LENGTH_SHORT).show()
                     return@setPositiveButton
                 }
-                repo.addPenitipan(Penitipan(namaPemilik = nama, namaHewan = hewan, jenisHewan = jenis, tanggal = tanggal, jam = jam, catatan = catatan.ifBlank { "-" }))
+                
+                repo.addPenitipan(Penitipan(
+                    namaPemilik = nama, 
+                    namaHewan = hewan, 
+                    jenisHewan = jenis, 
+                    tanggal = tanggal, 
+                    jam = jam, 
+                    catatan = catatan.ifBlank { "-" }
+                ))
                 adapter.updateData(repo.getAllPenitipan())
                 Toast.makeText(requireContext(), "Berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
             }

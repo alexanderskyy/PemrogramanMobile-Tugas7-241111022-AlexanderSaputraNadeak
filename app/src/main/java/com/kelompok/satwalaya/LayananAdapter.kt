@@ -12,17 +12,18 @@ class LayananAdapter<T>(
     private val onHapus: (T) -> Unit
 ) : RecyclerView.Adapter<LayananAdapter<T>.VH>() {
 
-    inner class VH(view: View) : RecyclerView.ViewHolder(view)
+    inner class VH(view: View) : RecyclerView.ViewHolder(view) {
+        val btnHapus: Button = view.findViewById(R.id.btnHapus)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = VH(
         LayoutInflater.from(parent.context).inflate(R.layout.item_layanan, parent, false)
     )
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        binder(holder.itemView, items[position])
-        holder.itemView.findViewById<Button>(R.id.btnHapus).setOnClickListener {
-            onHapus(items[position])
-        }
+        val item = items[position]
+        binder(holder.itemView, item)
+        holder.btnHapus.setOnClickListener { onHapus(item) }
     }
 
     override fun getItemCount() = items.size

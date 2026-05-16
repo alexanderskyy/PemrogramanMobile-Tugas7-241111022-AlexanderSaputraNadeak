@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             replaceFragment(fragment)
             true
         }
-    }
+    }  // ← ini yang tadi hilang!
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
